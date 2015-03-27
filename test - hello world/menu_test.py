@@ -10,15 +10,16 @@ class Example(wx.Frame):
         self.InitUI()
         
     def InitUI(self):    
-
+        
+        # 메뉴 만들기
         menubar = wx.MenuBar()
+        
+        # 메뉴 추가하기
         fileMenu = wx.Menu()
         fileMenu.Append(wx.ID_EXIT, '&Start', 'Start Job')
         fileMenu.Append(wx.ID_EXIT, '&End', 'End Job')
         qmi = fileMenu.Append(wx.ID_EXIT, 'Quit', 'Quit Application')
-        #fitem = fileMenu.Append(wx.ID_EXIT, 'Quit', 'Quit Application')
-        #fitem = fileMenu.Append(wx.ID_EXIT, 'Start', 'Start Job')
-        #fitem = fileMenu.Append(wx.ID_EXIT, 'End', 'End Job')
+        
         menubar.Append(fileMenu, '&Record')
         self.SetMenuBar(menubar)
         
@@ -26,6 +27,19 @@ class Example(wx.Frame):
 
         self.SetSize((300, 200))
         self.SetTitle('Simple menu')
+        
+        # text 상자 넣어보기
+        #self.control = wx.TextCtrl(self, pos = (120,150))
+        
+        # 단순 텍스트 보이기
+        panel = wx.Panel(self)
+        wx.StaticText(panel, label = "test", pos=(20,30))
+        wx.TextCtrl(panel, pos=(50,30))
+        
+        # 상태줄 추가
+        self.CreateStatusBar()
+        
+        
         self.Centre()
         self.Show(True)
         
